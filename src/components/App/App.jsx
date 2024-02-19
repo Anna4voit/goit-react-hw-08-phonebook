@@ -1,6 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { useDispatch } from 'react-redux';
 import { current } from '../../redux/auth/auth-operations';
 import { lazy } from 'react';
@@ -24,6 +27,7 @@ function App() {
 
   return (
     <div>
+      <ToastContainer position="top-center" autoClose={2000} />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />

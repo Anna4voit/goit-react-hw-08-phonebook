@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
 import {
   signupRequest,
   loginRequest,
@@ -11,10 +12,15 @@ export const signup = createAsyncThunk(
   async (body, { rejectWithValue }) => {
     try {
       const data = await signupRequest(body);
-      console.log(data);
+      toast.success('Registration success');
       return data;
     } catch (error) {
-      console.log(error.response);
+      if (error.response.status === 400) {
+        toast.error('Incorrect Authentication Data');
+      } else {
+        toast.error('500 Internal Server Error');
+      }
+
       return rejectWithValue(error.response.status);
     }
   }
@@ -25,9 +31,10 @@ export const login = createAsyncThunk(
   async (body, { rejectWithValue }) => {
     try {
       const data = await loginRequest(body);
+      toast.success('Welcom to your phonebook');
       return data;
     } catch (error) {
-      console.log(error);
+      toast.error('Incorrect email adress or password');
       return rejectWithValue(error.response.status);
     }
   }
@@ -59,6 +66,7 @@ export const logout = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const data = await logoutRequest();
+      toast.info('You are logout. Bye');
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

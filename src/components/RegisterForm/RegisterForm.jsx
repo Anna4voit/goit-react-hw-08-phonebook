@@ -36,7 +36,6 @@ const RegisterForm = () => {
     event.preventDefault();
 
     const data = { name, email, password };
-    console.log(data);
 
     dispatch(signup({ ...data }));
 

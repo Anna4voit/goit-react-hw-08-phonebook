@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
 
 import * as contactsApi from '../api/contacts-api';
 
@@ -35,7 +36,8 @@ export const addContact = createAsyncThunk(
         return normalizedName === normalizedCurrentName;
       });
       if (dublicateName) {
-        alert(`${name} is alredy in contacts`);
+        // alert(`${name} is alredy in contacts`);
+        toast.info(`${name} is alredy in contacts`);
         return false;
       }
     },
