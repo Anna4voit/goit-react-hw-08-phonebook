@@ -15,7 +15,7 @@ export const ContactList = () => {
 
   const contact = contacts.map(({ id, name, number }) => (
     <li className={css.list} key={id}>
-      <p>
+      <p className={css.text}>
         {name}: {number}
       </p>
       <button type="button" onClick={() => handleDeleteContact(id)}>

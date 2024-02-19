@@ -1,13 +1,15 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { ContactList } from './ContactList/ContactList';
-import { ContactForm } from './ContactForm/ContactForm';
-import { Filter } from './Filter/Filter';
-import { selectError, selectIsLoading } from '../redux/selectors';
-import { fetchContacts } from '../redux/contacts-operations';
-import css from '../components/App.module.css';
+import { ContactList } from 'components/ContactList/ContactList';
+import { ContactForm } from 'components/ContactForm/ContactForm';
+import { Filter } from 'components/Filter/Filter';
+import { selectError, selectIsLoading } from '../../redux/selectors';
+import { fetchContacts } from '../../redux/contacts-operations';
+import Loader from 'components/Loader/Loader';
 
-export const App = () => {
+import css from './Contacts.module.css';
+
+const Contacts = () => {
   const dispatch = useDispatch();
   const loading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
@@ -15,7 +17,6 @@ export const App = () => {
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
-
   return (
     <div className={css.box}>
       <div>
@@ -25,10 +26,12 @@ export const App = () => {
       <div className={css.boxContacts}>
         <h2 className={css.subtitle}>Contacts</h2>
         <Filter />
-        {loading && <p>...Loading</p>}
+        {loading && <Loader />}
         {error && <p>{error}</p>}
         <ContactList />
       </div>
     </div>
   );
 };
+
+export default Contacts;

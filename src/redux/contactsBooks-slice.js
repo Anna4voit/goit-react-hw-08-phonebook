@@ -1,21 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import InitialState from './InitialState';
+import { loadingReducer, errorReducer } from '../shared/functions/redux';
 
 import {
   fetchContacts,
   deleteContact,
   addContact,
 } from './contacts-operations';
-
-const loadingReducer = state => {
-  state.isLoading = true;
-  state.error = null;
-};
-
-const errorReducer = (state, { payload }) => {
-  state.isLoading = false;
-  state.error = payload;
-};
 
 const contactsBooksSlice = createSlice({
   name: 'contacts',
@@ -45,7 +36,5 @@ const contactsBooksSlice = createSlice({
       .addCase(deleteContact.rejected, errorReducer);
   },
 });
-
-// export const { addContact, deleteContact } = contactsBooksSlice.actions;
 
 export default contactsBooksSlice.reducer;

@@ -40,29 +40,37 @@ export const ContactForm = () => {
 
   return (
     <form className={css.form} onSubmit={handleSubmit}>
-      <label htmlFor={nameId}>Name</label>
-      <input
-        type="text"
-        name="name"
-        value={name}
-        onChange={handleChange}
-        id={nameId}
-        pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-        required
-      />
+      <div className={css.form_input}>
+        <div className={css.label}>
+          <label htmlFor={nameId}>Name</label>
+          <input
+            type="text"
+            name="name"
+            value={name}
+            onChange={handleChange}
+            id={nameId}
+            pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            required
+          />
+        </div>
 
-      <label htmlFor={phoneId}>Number</label>
-      <input
-        type="tel"
-        name="number"
-        value={number}
-        onChange={handleChange}
-        id={phoneId}
-        pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
-        required
-      />
+        <div className={css.label}>
+          <label htmlFor={phoneId}>Number</label>
+          <input
+            type="tel"
+            name="number"
+            value={number}
+            onChange={handleChange}
+            id={phoneId}
+            pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
+            required
+          />
+        </div>
+      </div>
 
-      <button type="submit">Add contact</button>
+      <button className={css.btn} type="submit">
+        Add contact
+      </button>
     </form>
   );
 };

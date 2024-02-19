@@ -1,0 +1,17 @@
+.link {
+  text-decoration: none;
+  color: rgb(3, 3, 77);
+  font-size: 18px;
+  font-weight: bold;
+  padding-right: 20px;
+}
+
+.link:global(.active) {
+  color: rgb(26, 138, 11);
+}
+
+.menu {
+  /* display: flex; */
+  align-items: center;
+  /* justify-content: space-between; */
+}

@@ -7,9 +7,87 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url('./images/phonebook.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: rgb(3, 3, 77);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+button {
+  width: 100px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+  background-color: rgb(3, 3, 77);
+  color: white;
+
+  box-shadow: 0 1px 10px rgba(100, 99, 99, 0.3);
+}
+button:hover,
+button:focus {
+  color: rgb(3, 3, 77);
+  background-color: rgb(240, 246, 246);
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.3);
+  border: 1px solid rgb(3, 3, 77);
+}
+
+input {
+  display: block;
+  width: 250px;
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: 2px solid rgb(3, 3, 77);
+  margin: 0;
+  outline: none;
+}
+
+input:hover,
+input:focus {
+  border: 2px solid rgb(9, 159, 234);
+}
+
+li,
+label {
+  font-size: 22px;
+  font-weight: 600;
+}
+.loaderStyle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* .link {
+ 
+  text-decoration: none;
+  color: rgb(3, 3, 77);
+  font-size: 18px;
+  font-weight: bold;
+} */

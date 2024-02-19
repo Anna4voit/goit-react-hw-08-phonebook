@@ -1,0 +1,15 @@
+.link {
+  text-decoration: none;
+  color: rgb(3, 3, 77);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.link:global(.active) {
+  color: rgb(26, 138, 11);
+}
+
+.navbarAuth {
+  display: flex;
+  gap: 10px;
+}

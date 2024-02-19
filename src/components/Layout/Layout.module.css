@@ -1,0 +1,14 @@
+.box {
+  padding-top: 40px;
+}
+
+.nav {
+  max-width: 350px;
+  margin-left: auto;
+  padding: 15px 20px;
+  margin-right: auto;
+  margin-bottom: 50px;
+  box-shadow: 0 1px 10px rgba(100, 99, 99, 0.3);
+  background-color: rgba(153, 176, 181, 0.255);
+  border-radius: 10px;
+}
